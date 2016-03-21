@@ -1,0 +1,23 @@
+extends ../layout/layout.jade
+
+block content
+  .container
+    .row
+      div
+        div.panel.panel-default( ng-controller='Controller1' )
+          div.panel-heading( ng-cloak ) {{ text }},Angular
+          ul
+            li( ng-repeat="div in servicetrs"  )
+              {{ div.firstname }}
+
+          label( for="flag" ) 成功1
+          input( id="flag" type="checkbox" ng-model="flag" )
+          br
+          <hr/>
+          button( ng-click="handle()" ) 点击我
+
+
+block script
+  script( src="./js/$q.js" )
+
+//- 直接定义成了模块形式。主要看一下JS代码，自上而下。

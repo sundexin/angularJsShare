@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="en" ng-app="myApp">
+
+<head>
+  <title>Node app</title>
+  <link rel="stylesheet" href="stylesheets/style.css">
+  <script src="bower_components/angular/angular.min.js"></script>
+</head>
+
+<body>
+  <div ng-controller="HomeController">
+    <h3>Button hits: {{ hits }}</h3>
+    <button ng-click="registerHit()">
+      HIT ME, if you dare
+    </button>
+  </div>
+  <script src="javascripts/services.js"></script>
+  <script src="javascripts/app.js"></script>
+</body>
+
+</html>
+<script type="text/javascript">
+  angular.module('myApp', [
+      'ngRoute',
+      'myApp.services'
+    ])
+    .controller('HomeController', function($scope, HitService) {
+      HitService.count()
+        .then(function(data) {
+          $scope.hits = data;
+        });
+      $scope.registerHit = function() {
+        HitService.registerHit()
+          .then(function(data) {
+            $scope.hits = data;
+          })
+      }
+    });
+
+  angular.module('myApp.services', [])
+    .factory('HitService', function($q, $http) {
+      var service = {
+        count: function() {
+          var d = $q.defer();
+          $http.get('/hits')
+            .success(function(data, status) {
+              d.resolve(data.hits);
+            }).error(function(data, status) {
+              d.reject(data);
+            });
+          return d.promise;
+        },
+        registerHit: function() {
+          var d = $q.defer();
+          $http.post('/hit', {})
+            .success(function(data, status) {
+              d.resolve(data.hits);
+            }).error(function(data, status) {
+              d.reject(data);
+            });
+          return d.promise;
+        }
+      }
+      return service;
+    });
+</script>

@@ -1,0 +1,16 @@
+extends ../layout/layout.jade
+
+block content
+  .container
+    .row
+       div
+        input( ng-model="text" )
+        p.
+          {{ text }},Angular
+
+
+block script
+  //- script( src="./js/2controller.js" )
+
+//- 运行机制
+//- 1、加载；2、ng-app 边界；3、找定义的指令或者表达式；4、找到之后，生成一个数据模型，挂在rootScope，在ng-app下任意一个层级都可以获取

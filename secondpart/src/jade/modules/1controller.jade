@@ -1,0 +1,21 @@
+extends ../layout/layout.jade
+
+block content
+  .container
+    .row
+      div
+        div.panel.panel-default( ng-controller='Controller1' )
+          div.panel-heading {{ text }},Angular
+          div.panel-body
+            button( ng-click='fun1()' ) 第一个按钮
+            button( ng-click='commonFn()' ) 通用按钮
+        div.panel.panel-default( ng-controller='Controller2' )
+          div.panel-heading {{ text }}, Angular
+          div.panel-body
+            button( ng-click='fun2()' ) 第二个按钮
+            button( ng-click='commonFn()' ) 通用按钮
+
+block script
+  script( src="./js/controller.js" )
+
+//- 直接定义成了模块形式。主要看一下JS代码，自上而下。

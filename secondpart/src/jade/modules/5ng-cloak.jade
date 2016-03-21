@@ -1,0 +1,12 @@
+extends ../layout/layout.jade
+
+block content
+  .container
+    .row
+      div( ng-controller="HelloAngular" )
+        p( ng-cloak ) {{ greeting.text }},Angulars
+
+block script
+  script( src="./js/ng-cloak.js" )
+
+//- ng-cloak 实现原理

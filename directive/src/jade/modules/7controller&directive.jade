@@ -1,0 +1,10 @@
+extends ../layout/layout.jade
+
+block content
+  .container
+    .row
+      button.btn.btn-primary( type="button" ng-controller='MyCtrl' )
+        loader( attrLoader='myFunction1()' ) 点击弹出信息
+
+block script
+  script( src="./js/controller&directive.js" )

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html ng-app="myModule">
+  <head>
+    <title>AngularJsShare</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" chrome="1">
+    <meta name="keywords" content="">
+    <meta name="author" content="">
+    <link rel="stylesheet" type="text/css" href="../bower_components/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="../bower_components/bootstrap/dist/css/bootstrap-theme.min.css">
+    <script src="../bower_components/jquery/dist/jquery.min.js"></script>
+    <script src="../bower_components/angular/angular.min.js"></script>
+    <script src="../bower_components/angular-animate/angular-animate.js"></script>
+    <style>
+      .text-red {
+        margin-bottom: 20px;
+        padding: 15px;
+        border: 1px solid transparent;
+        border-radius: 4px;
+        color: #3c763d;
+        background-color: #f2dede;
+        border-color: ##ebccd1;
+      }
+      .text-green {
+        margin-bottom: 20px;
+        padding: 15px;
+        border: 1px solid transparent;
+        border-radius: 4px;
+        color: #3c763d;
+        background-color: #dff0d8;
+        border-color: #d6e9c6;
+      }
+      
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="row">
+        <div ng-controller="CSSCtrl">
+          <p class="text-{{color}}">测试CSS样式</p>
+          <button ng-click="setGreen()" class="btn btn-default">{{ sun }}</button>
+        </div>
+      </div>
+    </div>
+    <script src="./js/css.js"></script>
+  </body>
+</html>

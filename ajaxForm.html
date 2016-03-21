@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title></title>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <script src="http://apps.bdimg.com/libs/jquery/1.11.1/jquery.min.js"></script>
+        <script src="http://malsup.github.com/jquery.form.js"></script>
+         <script>
+       //ajaxForm
+        var queryString = $('#form1').formSerialize();
+        var optionss = {
+            dataType:"text",   // 提交成果后返回的数据格式，可选值包括xml，json或者script
+            type:'GET',        //提交类型可以是”GET“或者”POST“
+            url: "chuli.php",   // 表单提交的路径
+            target: '#divToUpdate',              // 服务器返回信息去更新的页面对象，可以是jquery选择器字符串或者jquer对象或者DOM对象。
+            beforeSubmit: showRequest,
+            success: showResponse,
+            beforeSerialize: showSerialize,
+            clearForm: true  // clearForm Boolean值属性，表示是否在表单提交成功后情况表单数据
+        };
+        $('#form1').ajaxForm(optionss);
+        function showRequest() {
+          // beforeSubmit在表单提交之前调用，可以表单验证放到该函数中。默认值：null
+        }
+        function showResponse(data){
+            console.log(data);
+            alert(data);
+            // success 表单提交成功后的回调函数，函数包含的参数有，1: responseText 或responseXML 值，该值依赖与dataType属性的设置。2: statusText 返回状态文本。3: xhr或者是表单的jquery对象。4:表单的jquery对象。
+        }
+        function showSerialize(  ) {
+          // beforeSerialize在表单序列化之前调用，默认值是：nul
+          // return false 阻止表单提交
+        }
+         </script>
+    </head>
+    <body>
+        <form method="GET" id="form1">
+            <input type="text" name="name" />
+            <input type="text" name="sex" />
+            <input type="submit" value="提交"/>
+        </form>
+        <hr />
+        <form  method="GET" id="form2">
+            <input type="text" name="name" />
+            <input type="text" name="sex" />
+            <input type="button" id="tijiao" value="提交"/>
+        </form>
+    </body>
+    <script>
+        //ajaxSubmit
+            $("#tijiao").click(function(){
+                $("#form2").ajaxSubmit({
+                    success:function(data){
+                        alert(data);
+                    }
+                })
+            });
+            // $("#form2").submit(function(){
+            //     $(this).ajaxSubmit({
+            //         success:function(data){
+            //             alert(data);
+            //         }
+            //     })
+            // });
+        </script>
+</html>

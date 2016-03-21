@@ -1,0 +1,10 @@
+extends ../layout/layout.jade
+
+block content
+  .container
+    .row
+      input( ng-model="text" )
+      p
+       | {{text}},AngularJS
+
+block script

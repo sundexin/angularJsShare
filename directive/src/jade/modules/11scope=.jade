@@ -1,0 +1,17 @@
+extends ../layout/layout.jade
+
+block content
+  .container
+    .row
+      div(ng-controller='MyCtrl')
+        | Controller:
+        br
+        input( type='text', ng-model='ctrlTry' )
+        input( type='text', ng-model='ctrlTry1' )
+        br
+        | Directive:
+        br
+        write( try = 'ctrlTry' )
+        write( try = 'ctrlTry1' )
+block script
+  script( src="./js/scope=.js" )

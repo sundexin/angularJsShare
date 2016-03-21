@@ -1,0 +1,16 @@
+extends ../layout/layout.jade
+block style
+
+
+block content
+  .container
+    .row
+      div( ng-controller='ngShowCtrl' )
+        button( ng-click='toggleMenu()' ) 切换
+        ul( ng-show='show' )
+          li 刘欢
+          li 杰克逊
+          li 麦当娜
+
+block script
+  script( src="./js/ngshow.js" )

@@ -1,0 +1,11 @@
+extends ../layout/layout.jade
+
+block content
+  .container
+    .row
+      div( ng-controller = 'MyCtrl' )
+        sidebox
+        //- 这里可以写一个测试 包括字符串和一个方法
+
+block script
+  script( src="./js/testtitle.js" )

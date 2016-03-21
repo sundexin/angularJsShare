@@ -1,0 +1,10 @@
+extends ../layout/layout.jade
+
+block content
+  .container
+    .row
+      hello
+        div 这是一个嵌套的元素，通过transclude后不会被替换。
+
+block script
+  script( src="./js/transclude.js" )

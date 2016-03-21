@@ -1,0 +1,12 @@
+extends ../layout/layout.jade
+
+block content
+  .container
+      .col-md-3
+        superman( strength ) 第一个按钮弹出一个指令
+      .col-md-3
+        superman( strength speed ) 第一个按钮弹出二个指令
+      .col-md-3
+        superman( strength speed light ) 第一个按钮弹出三个指令
+block script
+  script( src="./js/directive&directive.js" )

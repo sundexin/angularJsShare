@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>AngularJsShare</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" chrome="1">
+    <meta name="keywords" content="">
+    <meta name="author" content="">
+    <link rel="stylesheet" type="text/css" href="../bower_components/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="../bower_components/bootstrap/dist/css/bootstrap-theme.min.css">
+    <script src="../bower_components/jquery/dist/jquery.min.js"></script>
+    <script src="../bower_components/angular/angular.min.js"></script>
+  </head>
+  <body>
+    <div class="container">
+      <div class="row">
+        <div class="panel panel-primary">
+          <div class="panel-heading">
+            <div class="panel-title">双向数据绑定</div>
+          </div>
+          <div class="panel-body">
+            <div class="row">
+              <div class="col-md-12">
+                <form role="form" ng-controller="myModule" class="form-horizontal">
+                  <div class="form-group">
+                    <label class="col-md-2 control-label">邮箱：</label>
+                    <div class="col-md-10">
+                      <input type="email" placeholder="推荐使用gmaila邮箱" ng-model="userInfo.email" class="form-control">
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <label class="col-md-2 control-label">密码：</label>
+                    <div class="col-md-10">
+                      <input type="password" placeholder="只能是数字、字母、下划线" ng-model="userInfo.password" class="form-control">
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <div class="col-md-offset-2 col-md-10">
+                      <div class="checkbox">
+                        <label>
+                          <input type="checkbox" ng-model="userInfo.autoLogin">自动登录
+                        </label>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <div class="col-md-offset-2 col-md-10">
+                      <button ng-click="getFormData()" class="btn btn-default">获取Form表单的值</button>
+                      <button ng-click="setFormData()" class="btn btn-default">设置Form表单的值</button>
+                      <button ng-click="resetForm()" class="btn btn-default">重置表单</button>
+                    </div>
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="./js/twoWayData2.js"></script>
+  </body>
+</html>

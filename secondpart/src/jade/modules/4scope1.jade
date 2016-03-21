@@ -1,0 +1,18 @@
+extends ../layout/layout.jade
+
+block content
+  .container
+    .row
+      .panel.panel-primary
+        .panel-heading
+          h3.panel-title( ng-controller='CommonCtrl' )
+            | Hello {{ name }}!
+        .panel-body( ng-controller='ListCtrl' )
+          ol
+            li( ng-repeat='name in names')
+              | {{ name }} 职业是： {{ StaffMember }}
+
+
+block script
+  script( src="./js/scope1.js" )
+

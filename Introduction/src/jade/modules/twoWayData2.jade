@@ -1,0 +1,36 @@
+extends ../layout/layout.jade
+
+block content
+  .container
+    .row
+      .panel.panel-primary
+        .panel-heading
+          .panel-title 双向数据绑定
+        .panel-body
+          .row
+            .col-md-12
+              form.form-horizontal( role='form', ng-controller='myModule' )
+                .form-group
+                  label.col-md-2.control-label
+                    | 邮箱：
+                  .col-md-10
+                    input.form-control( type='email', placeholder='推荐使用gmaila邮箱', ng-model='userInfo.email' )
+                .form-group
+                  label.col-md-2.control-label
+                    | 密码：
+                  .col-md-10
+                    input.form-control( type='password', placeholder='只能是数字、字母、下划线', ng-model='userInfo.password' )
+                .form-group
+                  .col-md-offset-2.col-md-10
+                    .checkbox
+                      label
+                        input( type='checkbox', ng-model='userInfo.autoLogin' )
+                        | 自动登录
+                .form-group
+                  .col-md-offset-2.col-md-10
+                    button.btn.btn-default( ng-click='getFormData()' ) 获取Form表单的值
+                    button.btn.btn-default( ng-click='setFormData()' ) 设置Form表单的值
+                    button.btn.btn-default( ng-click='resetForm()' ) 重置表单
+
+block script
+  script( src="./js/twoWayData2.js" )

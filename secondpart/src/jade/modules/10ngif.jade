@@ -1,0 +1,16 @@
+extends ../layout/layout.jade
+block style
+
+
+block content
+  .container
+    .row
+      .row(ng-controller='ngIfCtrl')
+        .col-lg-offset-1
+          .btn-group
+            button.btn.btn-success( ng-if='fillet' ) button1
+            button.btn.btn-success button2
+            button.btn.btn-success( ng-show='rightangle' ) button3
+
+block script
+  script( src="./js/ngif.js" )

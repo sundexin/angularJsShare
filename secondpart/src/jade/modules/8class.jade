@@ -1,0 +1,14 @@
+extends ../layout/layout.jade
+block style
+
+
+block content
+  .container
+    .row
+      div( ng-controller='classCtrl' )
+        div( ng-class='{danger: isError, success: isOK}' ) {{ messageText }}
+        button( ng-click='showError()' ) 展示错误
+        button( ng-click='showSuccess()' ) 出现成功
+
+block script
+  script( src="./js/class.js" )

@@ -1,0 +1,13 @@
+app.controller('ServiceController',
+function($scope, githubService) {
+// 注意username属性的变化
+// 如果有变化就运行该函数
+$scope.$watch('username', function(newUsername) {
+// 从使用JSONP调用Github API的$http服务中返回promise
+  githubService.events(newUsername)
+    .success(function(data, status, headers) { // success函数在数据中封装响应
+  });
+});
+// 因此我们需要调用data.data来获取原始数据
+     $scope.events = data.data;
+})

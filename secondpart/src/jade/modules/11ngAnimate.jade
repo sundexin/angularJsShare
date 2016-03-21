@@ -1,0 +1,27 @@
+extends ../layout/layout.jade
+block style
+  style.
+    #animate{ color: #3c763d;
+    background-color: #dff0d8;
+    border-color: #d6e9c6;
+    padding: 15px;
+    margin-bottom: 20px;
+    border: 1px solid transparent;
+    border-radius: 4px;-webkit-transition:all linear 2s; transition:all linear 2s; opacity:1;}
+    #animate.ng-hide{ opacity:0;}
+    #animate.ng-hide { }
+    #animate.ng-hide-add { }
+    #animate.ng-hide-add.ng-hide-add-active { }
+    #animate.ng-hide-remove { }
+    #animate.ng-hide-remove.ng-hide-remove-active {  }
+
+block content
+  .container
+    .row
+      div( ng-controller='ngAnimateCtrl' )
+        button( ng-click='showButton()' ) show
+        button( ng-click='hideButton()' ) hide
+        #animate( ng-show='expression' ) "新浪微博"
+
+block script
+  script( src="./js/nganimate.js" )

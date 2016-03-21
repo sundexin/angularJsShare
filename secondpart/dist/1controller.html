@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html ng-app="myModule">
+  <head>
+    <title>AngularJsShare</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" chrome="1">
+    <meta name="keywords" content="">
+    <meta name="author" content="">
+    <link rel="stylesheet" type="text/css" href="../bower_components/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="../bower_components/bootstrap/dist/css/bootstrap-theme.min.css">
+    <script src="../bower_components/jquery/dist/jquery.min.js"></script>
+    <script src="../bower_components/angular/angular.min.js"></script>
+    <script src="../bower_components/angular-animate/angular-animate.js"></script>
+  </head>
+  <body>
+    <div class="container">
+      <div class="row">
+        <div>
+          <div ng-controller="Controller1" class="panel panel-default">
+            <div class="panel-heading">{{ text }},Angular</div>
+            <div class="panel-body">
+              <button ng-click="fun1()">第一个按钮</button>
+              <button ng-click="commonFn()">通用按钮</button>
+            </div>
+          </div>
+          <div ng-controller="Controller2" class="panel panel-default">
+            <div class="panel-heading">{{ text }}, Angular</div>
+            <div class="panel-body">
+              <button ng-click="fun2()">第二个按钮</button>
+              <button ng-click="commonFn()">通用按钮</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="./js/controller.js"></script>
+  </body>
+</html>

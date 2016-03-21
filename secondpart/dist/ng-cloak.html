@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html ng-app="myModule">
+  <head>
+    <title>AngularJsShare</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" chrome="1">
+    <meta name="keywords" content="">
+    <meta name="author" content="">
+    <link rel="stylesheet" type="text/css" href="../bower_components/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="../bower_components/bootstrap/dist/css/bootstrap-theme.min.css">
+    <script src="../bower_components/jquery/dist/jquery.min.js"></script>
+    <script src="../bower_components/angular/angular.min.js"></script>
+  </head>
+  <body>
+    <div class="container">
+      <div class="row">
+        <div ng-controller="HelloAngular">
+          <p ng-cloak>{{ greeting.text }},Angulars</p>
+        </div>
+      </div>
+    </div>
+    <script src="./js/ng-cloak.js"></script>
+  </body>
+</html>

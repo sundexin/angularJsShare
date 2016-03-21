@@ -1,0 +1,12 @@
+extends ../layout/layout.jade
+
+block content
+	.container
+		.row
+			div( ng-controller="HelloAngular" )
+				p {{ greeting.text }},Angulars
+
+block script
+	script( src="js/mvc.js" )
+
+//- 直接定义成了模块形式。主要看一下JS代码，自上而下。

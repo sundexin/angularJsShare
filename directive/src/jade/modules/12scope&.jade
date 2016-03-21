@@ -1,0 +1,15 @@
+extends ../layout/layout.jade
+
+block content
+  .container
+    .row
+      div( ng-controller="MyCtrl" )
+        my-scope( greet="sayHello( name )" )
+        my-scope( greet="sayHello( name )" )
+        my-scope( greet="sayHello( name )" )
+        my-scope( greet="sayHello( name1 )" )
+        
+        //- greeting( greet='sayHello( name )' )
+
+block script
+  script( src="./js/scope&.js" )
